@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: muponi-crm
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
+      - key: RETENTION_MONTHS
+        value: 24
+    healthCheckPath: /health
