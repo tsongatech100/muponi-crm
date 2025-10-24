@@ -1,17 +1,3 @@
-services:
-  - type: web
-    name: muponi-crm
-    env: node
-    plan: free
-    buildCommand: npm run build
-    startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: JWT_SECRET
-        generateValue: true
-      - key: VITE_BOLT_DATABASE_URL
-        sync: false
-      - key: VITE_BOLT_DATABASE_ANON_KEY
-        sync: false
-    healthCheckPath: /
+git add render.yaml
+git commit -m "Simplify Render build command"
+git push
